@@ -6,6 +6,7 @@
     
 {% block contenido %}
     <header>
+        <a href="/crear-miembro">Crear miembro</a>
         <h1>Members</h1>
     </header>
 
@@ -13,6 +14,17 @@
         <ul>
             {% for m in mymembers %}
                 <li> <a href="details/{{m.id}}">{{m.id}}</a> {{ m.firstname }} {{m.lastname}}</li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <main>
+        <h2>EJEMPLO CON UN FILTRO</h2>
+        <ul>
+            {% for m in mymembers %}
+                {% if m.firstname == "luis" %}
+                    <li> <a href="details/{{m.id}}">{{m.id}}</a> {{ m.firstname }} {{m.lastname}}</li>
+                {% endif %}
             {% endfor %}
         </ul>
     </main>

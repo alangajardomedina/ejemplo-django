@@ -1,0 +1,24 @@
+{%extends "master.html"%}
+
+{%block titulo%}
+    Crear miembro
+{%endblock%}
+
+{%block contenido%}
+    <h1>Formulario de miembros</h1>
+    
+    <form method="get">
+       {{ form.as_p }}
+
+       {% if form.errors %}
+         <ul>
+         {% for field in form %}
+           {% for error in field.errors %}
+             <li>{{error}}</li>
+           {% endfor %}
+         {% endfor %}
+         </ul>
+       {% endif %}
+       <button type="submit">Crear</button>
+    </form>
+{%endblock%}
