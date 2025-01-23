@@ -5,6 +5,10 @@ from .models import Member
 from .forms import MemberForm
 
 # Create your views here.
+def main(request):
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render())
+
 def members(request):
     mymembers = Member.objects.all().values()
     template = loader.get_template('all_members.html')
