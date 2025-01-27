@@ -1,0 +1,17 @@
+{%extends "master.html"%}
+
+{%block titulo%}
+    Registro
+{%endblock%}
+
+{%block contenido%}
+    <main class="container">
+        <h1>Formulario de registro</h1>
+        
+        <form method="get">
+           {{ form.as_p }}
+    
+           <button type="submit">Registrar</button>
+        </form>
+    </main>
+{%endblock%}

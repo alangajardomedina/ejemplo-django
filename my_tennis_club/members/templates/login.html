@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block titulo %}
+    Login
+{% endblock %}
+
+{% block contenido %}
+
+    <main class="container">
+        <form method="get">
+            {{form.as_p}}
+            <button type="submit">Login</button>
+        </form>
+    </main>
+
+{% endblock %}

@@ -16,7 +16,15 @@
         <ul class="nav bg-info">
             <li class="nav-item"><a class="nav-link link-light" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link link-light" href="/members">Miembros</a></li>
-            <li class="nav-item"><a class="nav-link link-light" href="/crear-miembro">Crear miembros</a></li>
+            {% if request.session.usuario_tipousuario == 'admin'  %}
+                <li class="nav-item"><a class="nav-link link-light" href="/crear-miembro">Crear miembros</a></li>
+            {% endif %}
+            {% if request.session.usuario_id %}
+                <li class="nav-item"><a class="nav-link link-light" href="/logout">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link link-light" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link link-light" href="/registro">Registro</a></li>
+            {% endif %}
         </ul>
     </div>
 
